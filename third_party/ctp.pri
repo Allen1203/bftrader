@@ -1,13 +1,13 @@
-SOURCE_DIR = $$PWD/ctp
+CTP_DIR = $$PWD/ctp
+
 INCLUDEPATH += \
-    $$SOURCE_DIR
+    $$CTP_DIR \
+    $$CTP_DIR/include
 
 SOURCES += \
-    $$SOURCE_DIR/mdapi_proxy.cpp \
-    $$SOURCE_DIR/tdapi_proxy.cpp
+    $$CTP_DIR/mdapi_proxy.cpp \
+    $$CTP_DIR/tdapi_proxy.cpp
 
-VNSDK_CTP_DIR = c:/vnsdk/ctp/include
-INCLUDEPATH += $$VNSDK_CTP_DIR
 HEADERS += \
-    $$VNSDK_CTP_DIR/*.h
+    $$CTP_DIR/include/*.h
 

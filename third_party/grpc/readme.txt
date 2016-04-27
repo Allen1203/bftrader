@@ -1,4 +1,4 @@
-﻿grpc c++ helloworld
+﻿编译步骤
 
 by和哥 2015-2016
 
@@ -35,38 +35,26 @@ protoc.exe
 
 构造c++ sdk
 ======
-1. 拷贝grpc的include下全部内容到c:\vnsdk\grpc\include
-2. 拷贝protobuf的src下google目录到c:\vnsdk\grpc\include
-3. 拷贝grpc的lib+bin到c:\vnsdk\grpc\lib+bin
-4. 拷贝protobuf的lib+bin到c:\vnsdk\grpc\lib+bin
-5. 拷贝zlib的include+lib+bin到c:\vnsdk\grpc\include+lib+bin
+1. 拷贝grpc的include下全部内容到C:\projects\bftrader\third_party\grpc\include
+2. 拷贝protobuf的src下google目录到C:\projects\bftrader\third_party\grpc\include
+3. 拷贝grpc的lib+bin到C:\projects\bftrader\third_party\grpc\lib+bin
+4. 拷贝protobuf的lib+bin到C:\projects\bftrader\third_party\grpc\lib+bin
+5. 拷贝zlib的include+lib+bin到C:\projects\bftrader\third_party\grpc\include+lib+bin
+zlib所在的目录：
 vsprojects\packages\grpc.dependencies.zlib.1.2.8.10\build\native\lib\v140\x64\Release\dynamic\stdcall
 vsprojects\packages\grpc.dependencies.zlib.redist.1.2.8.10\build\native\bin\v140\x64\Release\dynamic\stdcall
 
 安装python sdk
 ======
 https://pypi.python.org/pypi/grpcio
-grpcio-0.13.0-cp27-cp27m-win32.whl
+grpcio-0.13.1-cp27-cp27m-win32.whl
 protobuf-3.0.0b2.post2-py2-none-any.whl
 
 构造go sdk
 ======
 go get google.golang.org/grpc
 go get github.com/golang/protobuf/protoc-gen-go
-拷贝 protoc-gen-go.exe
+拷贝 protoc-gen-go.exe 到 C:\projects\bftrader\third_party\grpc\bin
 说明：
 1 go和qt的binding，go到qt通过signal，qt到go通过channel，https://github.com/therecipe/qt
 2 用metaobject直接调用也可以
-
-你好世界
-======
-
-1 编译proto文件
-c:\vnsdk\grpc\bin\protoc.exe -I c:\projects\vnxx\vnsdk\grpc\example\protos --grpc_out=. --plugin=protoc-gen-grpc=c:\vnsdk\grpc\bin\grpc_cpp_plugin.exe c:\projects\vnxx\vnsdk\grpc\example\protos\helloworld.proto
-c:\vnsdk\grpc\bin\protoc.exe -I c:\projects\vnxx\vnsdk\grpc\example\protos --cpp_out=. c:\projects\vnxx\vnsdk\grpc\example\protos\helloworld.proto
-
-2 写客户端
-grpc\examples\cpp\helloworld\greeter_client.cc
-
-3 写服务端
-grpc\examples\cpp\helloworld\greeter_server.cc

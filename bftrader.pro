@@ -1,5 +1,11 @@
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    ctpnow \
+    allinone \
+    #ctpgateway \
+    #btgateway \
+    #ctaengine \
+    #datafeed \
+    #dataframe \
+    #assist \
     tools

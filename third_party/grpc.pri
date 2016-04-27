@@ -1,4 +1,9 @@
-GRPC_DIR = c:/vnsdk/grpc
+GRPC_DIR = $$PWD/grpc
+
+# include
+INCLUDEPATH += $$GRPC_DIR/include
+
+# lib
 GRPC_LIB_DIR = $$GRPC_DIR/lib
 DEBUG_NAME_POST = ""
 CONFIG(debug,debug|release) {
@@ -7,10 +12,6 @@ CONFIG(debug,debug|release) {
 } else {
 }
 
-# include
-INCLUDEPATH += $$GRPC_DIR/include
-
-# lib
 LIBS += $$GRPC_LIB_DIR/gpr.lib
 LIBS += $$GRPC_LIB_DIR/grpc_unsecure.lib
 LIBS += $$GRPC_LIB_DIR/grpc++_unsecure.lib
